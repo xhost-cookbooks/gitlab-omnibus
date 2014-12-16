@@ -13,7 +13,7 @@ Vagrant.configure('2') do |config|
     }
 
     chef.run_list = [
-        'recipe[gitlab-omnibus::default]'
+      'recipe[gitlab-omnibus::default]'
     ]
   end
 end
