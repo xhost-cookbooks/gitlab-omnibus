@@ -22,7 +22,15 @@ include_recipe 'gitlab-omnibus::install'
 
 template '/etc/gitlab/gitlab.rb' do
   variables(
-    external_url: node['gitlab-omnibus']['external_url']
+    external_url: node['gitlab-omnibus']['external_url'],
+    enable_tls: node['gitlab-omnibus']['enable_tls'],
+    redirect_http_to_https: node['gitlab-omnibus']['nginx']['redirect_http_to_https'],
+    ssl_certificate: node['gitlab-omnibus']['nginx']['ssl_certificate'],
+    ssl_key: node['gitlab-omnibus']['nginx']['key'],
+    gitlab_email_from: node['gitlab-omnibus']['rails']['gitlab_email_from'],
+    ldap_enabled: node['gitlab-omnibus']['rails']['ldap_enabled'],
+    ldap_group_base: node['gitlab-omnibus']['rails']['ldap_group_base'],
+    ldap_user_filter: node['gitlab-omnibus']['rails']['ldap_user_filter']
   )
   mode 0600
   notifies :run, 'execute[gitlab-ctl reconfigure]'
