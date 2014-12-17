@@ -19,3 +19,4 @@ bin/*
 .coverage/*
 .kitchen/
 .kitchen.local.yml
+/metadata.json
