@@ -27,6 +27,7 @@ attribute 'gitlab-omnibus/package/checksum',
 attribute 'gitlab-omnibus/external_url',
           display_name: 'GitLab Omnibus External URL',
           description: 'The external or public URL of the GitLab web interface.',
+          default: 'http://gitlab.example.com/',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/enable_tls',
