@@ -9,8 +9,8 @@ version          '0.1.0'
 
 recipe 'gitlab-omnibus::default',        'Configures and installs GitLab.'
 recipe 'gitlab-omnibus::install',        'Installs GitLab omnibus package.'
-recipe 'gitlab-omnibus::configure'       'Configures GitLab omnibus configuration file.'
-recipe 'gitlab-omnibus::reconfigure'     'Re-configures GitLab.'
+recipe 'gitlab-omnibus::configure',      'Configures GitLab omnibus configuration file.'
+recipe 'gitlab-omnibus::reconfigure',    'Re-configures GitLab.'
 
 attribute 'gitlab-omnibus/package/download_url',
           display_name: 'GitLab Omnibus Package URL',
