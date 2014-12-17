@@ -18,4 +18,7 @@
 # limitations under the License.
 #
 
+# an ad-hoc recipe that is only going to work after one chef run
+# configuring the file so it exists in compile time
+
 log "/etc/gitlab/gitlab.rb:\n#{IO.read('/etc/gitlab/gitlab.rb')}"
