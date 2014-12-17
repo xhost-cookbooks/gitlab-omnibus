@@ -27,13 +27,11 @@ attribute 'gitlab-omnibus/package/checksum',
 attribute 'gitlab-omnibus/external_url',
           display_name: 'GitLab Omnibus External URL',
           description: 'The external or public URL of the GitLab web interface.',
-          default: false,
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/enable_tls',
           display_name: 'GitLab Omnibus Enable TLS',
           description: 'Whether to enable TLS (SSL) support.',
-          default: false,
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/nginx/redirect_http_to_https',
@@ -55,7 +53,6 @@ attribute 'gitlab-omnibus/nginx/ssl_certficiate_key',
 attribute 'gitlab-omnibus/rails/ldap_enabled',
           display_name: 'GitLab Omnibus LDAP Enabled',
           description: 'Whether to enable LDAP with GitLab.',
-          default: false,
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/rails/gitlab_email_from',
