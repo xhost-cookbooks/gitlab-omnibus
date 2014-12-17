@@ -30,7 +30,8 @@ template '/etc/gitlab/gitlab.rb' do
     gitlab_email_from: node['gitlab-omnibus']['rails']['gitlab_email_from'],
     ldap_enabled: node['gitlab-omnibus']['rails']['ldap_enabled'],
     ldap_group_base: node['gitlab-omnibus']['rails']['ldap_group_base'],
-    ldap_user_filter: node['gitlab-omnibus']['rails']['ldap_user_filter']
+    ldap_user_filter: node['gitlab-omnibus']['rails']['ldap_user_filter'],
+    ldap_servers_yaml: node['gitlab-omnibus']['rails']['ldap_servers_yaml']
   )
   mode 0600
   notifies :run, 'execute[gitlab-ctl reconfigure]'
