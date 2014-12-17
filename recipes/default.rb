@@ -17,3 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+include_recipe 'gitlab-omnibus::install'
+include_recipe 'gitlab-omnibus::configure'
+include_recipe 'gitlab-omnibus::print_config'
