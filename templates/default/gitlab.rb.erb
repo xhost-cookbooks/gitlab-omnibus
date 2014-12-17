@@ -1,1 +1,20 @@
-external_url '<%= @external_url -%>'
+external_url = '<%= @external_url %>'
+<% if @enable_ts %>
+nginx['ssl_certificate'] = '<%= @ssl_certificate %>'
+nginx['ssl_certificate_key'] =  '<%= @ssl_key %>'
+nginx['redirect_http_to_https'] = <%= @redirect_http_to_https %>
+<% end %>
+
+gitlab_rails['gitlab_email_from'] = '<%= @gitlab_email_from %>'
+
+gitlab_rails['ldap_enabled'] = <%= @ldap_enabled %>
+
+# GitLab Enterprise Edition only
+gitlab_rails['ldap_group_base'] = '<%= @ldap_group_base %>'
+gitlab_rails['ldap_user_filter'] = '<%= @ldap_user_filter %>'
+
+<% if @ldap_servers_yaml %>
+gitlab_rails['ldap_servers'] = YAML.load <<-EOS
+<%= @ldap_servers_yaml -%>
+EOS
+<% end %>
