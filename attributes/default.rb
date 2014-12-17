@@ -2,6 +2,20 @@ default['gitlab-omnibus']['package']['download_url'] = 'https://downloads-packag
 default['gitlab-omnibus']['package']['checksum'] = 'c00a73664aa197f78a4df887fd020ea686e299d3cb0ea24f25dcc18fea971902'
 default['gitlab-omnibus']['package']['download_to'] = "#{Chef::Config[:file_cache_path]}/#{File.basename(node['gitlab-omnibus']['package']['download_url'])}"
 
-default['gitlab-omnibus']['external_url'] = 'https://gitlab.example.com'
+default['gitlab-omnibus']['enable_tls'] = false
 
-default['gitlab-omnibus']['nginx']['redirect_http_to_https'] = true
+# gitlab.rb configuration directives
+default['gitlab-omnibus']['external_url'] = 'https://gitlab.example.com'
+default['gitlab-omnibus']['nginx']['redirect_http_to_https'] = false
+default['gitlab-omnibus']['nginx']['ssl_certificate'] = nil
+default['gitlab-omnibus']['nginx']['ssl_certificate_key'] = nil
+
+default['gitlab-omnibus']['rails']['gitlab_https'] = false
+default['gitlab-omnibus']['rails']['gitlab_port'] = 80
+default['gitlab-omnibus']['rails']['ldap_enabled'] = false
+default['gitlab-omnibus']['rails']['gitlab_email_from'] = 'gitlab@example.com'
+
+# GitLab Enterprise Edition only
+default['gitlab-omnibus']['rails']['ldap_group_base'] = ''
+default['gitlab-omnibus']['rails']['ldap_user_filter'] = ''
+default['gitlab-omnibus']['rails']['ldap_servers_yaml'] = nil
