@@ -20,4 +20,3 @@
 
 include_recipe 'gitlab-omnibus::install'
 include_recipe 'gitlab-omnibus::configure'
-include_recipe 'gitlab-omnibus::print_config'
