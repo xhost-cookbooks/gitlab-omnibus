@@ -48,7 +48,7 @@ attribute 'gitlab-omnibus/ssl/certificate',
           description: 'The x509 (pem) TLS/SSL certificate.',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
 
-attribute 'gitlab-omnibus/ssl/certficate_key',
+attribute 'gitlab-omnibus/ssl/certificate_key',
           display_name: 'GitLab Omnibus SSL Certificate Key',
           description: "The x509 (pem) TLS/SSL certificate's key.",
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
