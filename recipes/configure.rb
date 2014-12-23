@@ -18,15 +18,18 @@
 # limitations under the License.
 #
 
+require 'uri'
+
 include_recipe 'gitlab-omnibus::install'
+include_recipe 'gitlab-omnibus::install_pki'
 
 template '/etc/gitlab/gitlab.rb' do
   variables(
     external_url: node['gitlab-omnibus']['external_url'],
     enable_tls: node['gitlab-omnibus']['enable_tls'],
     redirect_http_to_https: node['gitlab-omnibus']['nginx']['redirect_http_to_https'],
-    ssl_certificate: node['gitlab-omnibus']['nginx']['ssl_certificate'],
-    ssl_key: node['gitlab-omnibus']['nginx']['key'],
+    ssl_cert_path: "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-cert.pem", 
+    ssl_key_path: "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-key.pem",
     gitlab_email_from: node['gitlab-omnibus']['rails']['gitlab_email_from'],
     ldap_enabled: node['gitlab-omnibus']['rails']['ldap_enabled'],
     ldap_group_base: node['gitlab-omnibus']['rails']['ldap_group_base'],
