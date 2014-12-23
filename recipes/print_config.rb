@@ -18,7 +18,10 @@
 # limitations under the License.
 #
 
-# an ad-hoc recipe that is only going to work after one chef run
-# configuring the file so it exists in compile time
+# an ad-hoc recipe that prints the gitlab.rb configuration file
 
-log "/etc/gitlab/gitlab.rb:\n#{IO.read('/etc/gitlab/gitlab.rb')}"
+ruby_block 'print /etc/gitlab/gitlab.rb' do
+  block do
+    Chef::Log.info("/etc/gitlab/gitlab.rb:\n#{IO.read('/etc/gitlab/gitlab.rb')}")
+  end
+end
