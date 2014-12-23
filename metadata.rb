@@ -20,7 +20,7 @@ attribute 'gitlab-omnibus/package/download_url',
 
 attribute 'gitlab-omnibus/package/checksum',
           display_name: 'GitLab Omnibus Package Checksum',
-          description: 'The SHA256 checksume of the GitLab Omnibus package.',
+          description: 'The SHA256 checksum of the GitLab Omnibus package.',
           default: 'c00a73664aa197f78a4df887fd020ea686e299d3cb0ea24f25dcc18fea971902',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install']
 
