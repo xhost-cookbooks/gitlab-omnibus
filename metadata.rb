@@ -38,7 +38,7 @@ attribute 'gitlab-omnibus/enable_tls',
           description: 'Whether to enable TLS (SSL) support.',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
 
-attribute 'gitlab-omnibus/nginx/redirect_http_to_https',
+attribute 'gitlab-omnibus/redirect_http_to_https',
           display_name: 'GitLab Omnibus Redirect HTTP->HTTPS',
           description: 'Whether to redirect HTTP requests to HTTPS.',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']

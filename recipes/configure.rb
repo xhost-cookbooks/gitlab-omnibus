@@ -27,7 +27,7 @@ template '/etc/gitlab/gitlab.rb' do
   variables(
     external_url: node['gitlab-omnibus']['external_url'],
     enable_tls: node['gitlab-omnibus']['enable_tls'],
-    redirect_http_to_https: node['gitlab-omnibus']['nginx']['redirect_http_to_https'],
+    redirect_http_to_https: node['gitlab-omnibus']['redirect_http_to_https'],
     ssl_cert_path: "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-cert.pem", 
     ssl_key_path: "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-key.pem",
     gitlab_email_from: node['gitlab-omnibus']['rails']['gitlab_email_from'],

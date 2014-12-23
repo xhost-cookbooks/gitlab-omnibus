@@ -6,7 +6,7 @@ default['gitlab-omnibus']['enable_tls'] = false
 
 # gitlab.rb configuration directives
 default['gitlab-omnibus']['external_url'] = 'https://gitlab.example.com'
-default['gitlab-omnibus']['nginx']['redirect_http_to_https'] = false
+default['gitlab-omnibus']['redirect_http_to_https'] = false
 
 # ssl cert/key
 default['gitlab-omnibus']['ssl']['certificate'] = nil
