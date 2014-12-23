@@ -1,7 +1,9 @@
 external_url = '<%= @external_url %>'
-<% if @enable_ts %>
-nginx['ssl_certificate'] = '<%= @ssl_certificate %>'
-nginx['ssl_certificate_key'] =  '<%= @ssl_key %>'
+<% if @enable_tls %>
+gitlab_rails['gitlab_https'] = true
+gitlab_rails['gitlab_port'] = 443
+nginx['ssl_certificate'] = '<%= @ssl_cert_path %>'
+nginx['ssl_certificate_key'] =  '<%= @ssl_key_path %>'
 nginx['redirect_http_to_https'] = <%= @redirect_http_to_https %>
 <% end %>
 
