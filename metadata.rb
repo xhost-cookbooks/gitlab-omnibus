@@ -10,6 +10,7 @@ version          '0.1.0'
 
 recipe 'gitlab-omnibus::default',        'Configures and installs GitLab.'
 recipe 'gitlab-omnibus::install',        'Installs GitLab omnibus package.'
+recipe 'gitlab-omnibus::install_pki',    'Installs an SSL certificate and key for GitLab if desired.'
 recipe 'gitlab-omnibus::configure',      'Configures GitLab omnibus configuration file.'
 recipe 'gitlab-omnibus::reconfigure',    'Re-configures GitLab.'
 recipe 'gitlab-omnibus::print_config',   'Prints (logs) the gitlab.rb configuration.'
@@ -42,12 +43,12 @@ attribute 'gitlab-omnibus/nginx/redirect_http_to_https',
           description: 'Whether to redirect HTTP requests to HTTPS.',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
-attribute 'gitlab-omnibus/nginx/ssl_certificate',
+attribute 'gitlab-omnibus/ssl/certificate',
           display_name: 'GitLab Omnibus SSL Certificate',
           description: 'The x509 (pem) TLS/SSL certificate.',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
-attribute 'gitlab-omnibus/nginx/ssl_certficiate_key',
+attribute 'gitlab-omnibus/ssl/certficate_key',
           display_name: 'GitLab Omnibus SSL Certificate Key',
           description: "The x509 (pem) TLS/SSL certificate's key.",
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
