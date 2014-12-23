@@ -16,5 +16,6 @@ gitlab_rails['ldap_user_filter'] = '<%= @ldap_user_filter %>'
 <% if @ldap_servers_yaml %>
 gitlab_rails['ldap_servers'] = YAML.load <<-EOS
 <%= @ldap_servers_yaml -%>
+
 EOS
 <% end %>
