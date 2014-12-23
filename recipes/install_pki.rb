@@ -20,7 +20,6 @@
 
 require 'uri'
 
-# install ssl cert/key
 template "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-cert.pem" do
   source 'ssl_cert.erb'
   variables(
