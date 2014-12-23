@@ -31,12 +31,12 @@ attribute 'gitlab-omnibus/external_url',
           display_name: 'GitLab Omnibus External URL',
           description: 'The external or public URL of the GitLab web interface.',
           default: 'http://gitlab.example.com/',
-          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
+          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/enable_tls',
           display_name: 'GitLab Omnibus Enable TLS',
           description: 'Whether to enable TLS (SSL) support.',
-          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
+          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/nginx/redirect_http_to_https',
           display_name: 'GitLab Omnibus Redirect HTTP->HTTPS',
@@ -46,12 +46,12 @@ attribute 'gitlab-omnibus/nginx/redirect_http_to_https',
 attribute 'gitlab-omnibus/ssl/certificate',
           display_name: 'GitLab Omnibus SSL Certificate',
           description: 'The x509 (pem) TLS/SSL certificate.',
-          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
+          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/ssl/certficate_key',
           display_name: 'GitLab Omnibus SSL Certificate Key',
           description: "The x509 (pem) TLS/SSL certificate's key.",
-          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
+          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::install_pki', 'gitlab-omnibus::configure']
 
 attribute 'gitlab-omnibus/rails/ldap_enabled',
           display_name: 'GitLab Omnibus LDAP Enabled',
