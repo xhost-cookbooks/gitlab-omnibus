@@ -18,6 +18,9 @@
 # limitations under the License.
 #
 
+include_recipe 'openssh'
+include_recipe 'postfix'
+
 execute 'gitlab-ctl reconfigure' do
   action :nothing
 end

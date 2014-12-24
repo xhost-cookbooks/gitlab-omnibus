@@ -8,6 +8,14 @@ description      'Installs/Configures gitlab-omnibus'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
 
+%w(ubuntu debian).each do |os|
+  supports os
+end
+
+depends          'apt'
+depends          'openssh'
+depends          'postfix'
+
 recipe 'gitlab-omnibus::default',        'Configures and installs GitLab.'
 recipe 'gitlab-omnibus::install',        'Installs GitLab omnibus package.'
 recipe 'gitlab-omnibus::install_pki',    'Installs an SSL certificate and key for GitLab if desired.'
@@ -18,13 +26,13 @@ recipe 'gitlab-omnibus::print_config',   'Prints (logs) the gitlab.rb configurat
 attribute 'gitlab-omnibus/package/download_url',
           display_name: 'GitLab Omnibus Package URL',
           description: 'URL to fetch the GitLab Omnibus package from.',
-          default: 'https://downloads-packages.s3.amazonaws.com/ubuntu-14.04/gitlab_7.5.3-omnibus.5.2.1.ci-1_amd64.deb',
+          default: 'https://downloads-packages.s3.amazonaws.com/ubuntu-14.04/gitlab_7.6.1-omnibus.5.3.0.ci-1_amd64.deb',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install']
 
 attribute 'gitlab-omnibus/package/checksum',
           display_name: 'GitLab Omnibus Package Checksum',
           description: 'The SHA256 checksum of the GitLab Omnibus package.',
-          default: 'c00a73664aa197f78a4df887fd020ea686e299d3cb0ea24f25dcc18fea971902',
+          default: '9253a7b2ca194c4e0851ecfb51bcf050c3183750b30374348c280f72a7556522',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install']
 
 attribute 'gitlab-omnibus/external_url',
