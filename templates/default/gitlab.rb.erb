@@ -7,6 +7,7 @@ nginx['ssl_certificate_key'] =  '<%= @ssl_key_path %>'
 nginx['redirect_http_to_https'] = <%= @redirect_http_to_https %>
 <% end %>
 
+gitlab_rails['root_password'] = '<%= @root_password %>'
 gitlab_rails['gitlab_email_from'] = '<%= @gitlab_email_from %>'
 
 gitlab_rails['ldap_enabled'] = <%= @ldap_enabled %>

@@ -2,6 +2,7 @@ default['gitlab-omnibus']['package']['download_url'] = 'https://downloads-packag
 default['gitlab-omnibus']['package']['checksum'] = '9253a7b2ca194c4e0851ecfb51bcf050c3183750b30374348c280f72a7556522'
 default['gitlab-omnibus']['package']['download_to'] = "#{Chef::Config[:file_cache_path]}/#{File.basename(node['gitlab-omnibus']['package']['download_url'])}"
 
+default['gitlab-omnibus']['root_password'] = '5iveL!fe'
 default['gitlab-omnibus']['enable_tls'] = false
 
 # gitlab.rb configuration directives

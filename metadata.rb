@@ -66,6 +66,12 @@ attribute 'gitlab-omnibus/rails/ldap_enabled',
           description: 'Whether to enable LDAP with GitLab.',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
+attribute 'gitlab-omnibus/root_password',
+          display_name: 'GitLab Omnibus Root Password',
+          description: 'The password for the administrative user, root',
+          default: '5iveL!fe',
+          recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
+
 attribute 'gitlab-omnibus/rails/gitlab_email_from',
           display_name: 'GitLab Omnibus Email From',
           description: 'The email address mail is sent From: for GitLab.',

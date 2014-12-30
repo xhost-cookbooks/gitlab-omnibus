@@ -31,6 +31,7 @@ template '/etc/gitlab/gitlab.rb' do
     ssl_cert_path: "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-cert.pem", 
     ssl_key_path: "/etc/gitlab/ssl/#{URI(node['gitlab-omnibus']['external_url']).host}-key.pem",
     gitlab_email_from: node['gitlab-omnibus']['rails']['gitlab_email_from'],
+    root_password: node['gitlab-omnibus']['root_password'],
     ldap_enabled: node['gitlab-omnibus']['rails']['ldap_enabled'],
     ldap_group_base: node['gitlab-omnibus']['rails']['ldap_group_base'],
     ldap_user_filter: node['gitlab-omnibus']['rails']['ldap_user_filter'],
