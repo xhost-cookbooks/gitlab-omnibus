@@ -68,7 +68,7 @@ attribute 'gitlab-omnibus/rails/ldap_enabled',
 
 attribute 'gitlab-omnibus/root_password',
           display_name: 'GitLab Omnibus Root Password',
-          description: 'The password for the administrative user, root',
+          description: 'The initial password for the administrative user, root',
           default: '5iveL!fe',
           recipes: ['gitlab-omnibus::default', 'gitlab-omnibus::install', 'gitlab-omnibus::configure']
 
